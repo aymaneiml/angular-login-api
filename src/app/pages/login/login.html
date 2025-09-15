@@ -1,0 +1,60 @@
+<div class="wrap">
+    <div class="card-login">
+
+
+        <!-- LEFT: Branding + Image -->
+        <div class="brand">
+
+            <h3 style="margin-top:8px;color:#071428">Welcome back</h3>
+            <p>Log in to access your beats, manage drafts, and publish new tracks.</p>
+
+
+            <div class="illustration">
+                <img src="https://images.unsplash.com/photo-1508780709619-79562169bc64?ixlib=rb-4.0.3&auto=format&fit=crop&w=870&q=80"
+                    alt="Login illustration">
+            </div>
+
+
+            <div style="display:flex;gap:.6rem;margin-top:auto">
+                <div style="font-size:.85rem;color:var(--muted)">Need an account?</div>
+                <a class="link-anim" href="#">Create one</a>
+            </div>
+        </div>
+
+
+        <!-- RIGHT: Form -->
+        <div class="form-panel">
+            <div class="form-title">
+                <div>
+                    <h4 style="margin:0">Sign in</h4>
+                    <div class="small">Use your email and password to continue</div>
+                </div>
+                <div>
+                    <small class="small">Don’t have an account?</small>
+                    <a class="link-anim" href="#">Sign up</a>
+                </div>
+            </div>
+
+
+            <form [formGroup]="loginForm">
+                <div class="mb-3">
+                    <label class="form-label small">Email</label>
+                    <input type="email" formControlName="EmailId" class="form-control" placeholder="name@example.com">
+                </div>
+
+
+                <div class="mb-3">
+                    <label class="form-label small">Password</label>
+                    <input type="password" formControlName="Password" class="form-control" placeholder="Your password">
+                </div>
+
+
+                <div class="d-grid mb-2">
+                    <button class="btn btn-primary" (click)="onLogin()" type="submit">Sign in</button>
+                </div>
+            </form>
+        </div>
+
+
+    </div>
+</div>
