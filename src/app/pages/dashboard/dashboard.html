@@ -1,1 +1,27 @@
-<p>dashboard workdds!</p>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>altMobileNo</th>
+            <th>emailId</th>
+            <th>firstName</th>
+            <th>lastName</th>
+            <th>middleName</th>
+            <th>mobileNo</th>
+            <th>userId</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for(item of userList | slice:0:10; track $index){
+            <tr>
+                <td>{{item.altMobileNo}}</td>
+                <td>{{item.emailId}}</td>
+                <td>{{item.firstName}}</td>
+                <td>{{item.lastName}}</td>
+                <td>{{item.middleName}}</td>
+                <td>{{item.mobileNo}}</td>
+                <td>{{item.userId}}</td>
+            </tr>
+        }
+        
+    </tbody>
+</table>

@@ -1,13 +1,16 @@
+import { SlicePipe } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component, inject } from '@angular/core';
 
 @Component({
   selector: 'app-dashboard',
-  imports: [],
+  imports: [SlicePipe],
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.css'
 })
 export class Dashboard {
+
+  userList : any[] = [];
 
   http = inject(HttpClient);
 
@@ -16,13 +19,12 @@ export class Dashboard {
   }
 
   getUsers() {
-    debugger;
     this.http.get("https://freeapi.miniprojectideas.com/api/User/GetAllUsers").subscribe({
-      next:(response)=>{
-        debugger;
+      next:(response:any)=>{
+        this.userList = response.data;
       },
       error:(error)=>{
-        debugger;
+        alert('Error -' + error);
       }
     })
   }

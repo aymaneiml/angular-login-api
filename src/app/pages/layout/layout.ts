@@ -12,6 +12,7 @@ export class Layout {
   router = inject(Router);
 
   onLogOut() {
+    localStorage.removeItem("token")
     this.router.navigate(['/login'])
   }
 }
