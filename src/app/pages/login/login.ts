@@ -22,11 +22,13 @@ export class Login {
   onLogin(){
     debugger;
     const formValue = this.loginForm.value;
+    
     this.http.post("https://freeapi.miniprojectideas.com/api/User/Login", formValue).subscribe({
       next:(response:any)=>{
         debugger;
         if(response.result) { //l'attribut .result vient de la reponse du backend, qui mentione le message dans reuissite dans "result" et le message d'erreur dans "message"
           alert("Login Success")
+          localStorage.setItem("token",response.data.token)
           this.router.navigateByUrl("dashbord")
         } else {
           alert(response.message)
